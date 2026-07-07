@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="row align-items-center" style="min-height:75vh;">
+
+<div class="col-lg-6">
+
+<h1 class="display-4 fw-bold">
+
+Customer Management System
+
+</h1>
+
+<p class="lead text-muted mt-4">
+
+Manage customer records easily using
+Flask, Python and MySQL.
+
+Fast, Secure and Professional.
+
+</p>
+
+<div class="mt-4">
+
+<a href="/register"
+class="btn btn-primary btn-lg me-3">
+
+<i class="bi bi-person-plus-fill"></i>
+
+Register Customer
+
+</a>
+
+<a href="/login"
+class="btn btn-outline-dark btn-lg">
+
+<i class="bi bi-box-arrow-in-right"></i>
+
+Admin Login
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-6 text-center">
+
+<i class="bi bi-people-fill"
+style="font-size:230px;color:#2563eb;"></i>
+
+</div>
+
+</div>
+
+{% endblock %}

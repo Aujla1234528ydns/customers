@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register Customer
+{% endblock %}
+
+{% block content %}
+
+<div class="card shadow-lg">
+
+<div class="card-header bg-primary text-white p-4">
+
+<h3>
+
+<i class="bi bi-person-vcard-fill"></i>
+
+Customer Registration
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<form action="/save_customer"
+      method="POST"
+      enctype="multipart/form-data">
+<h5 class="text-primary mb-4">
+
+<i class="bi bi-person-fill"></i>
+
+Personal Information
+
+</h5>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Full Name</label>
+
+<input
+type="text"
+name="full_name"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Father's Name</label>
+
+<input
+type="text"
+name="father_name"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Mother's Name</label>
+
+<input
+type="text"
+name="mother_name"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Date of Birth</label>
+
+<input
+type="date"
+name="dob"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Gender</label>
+
+<select
+name="gender"
+class="form-select">
+
+<option value="">Select</option>
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Occupation</label>
+
+<input
+type="text"
+name="occupation"
+class="form-control">
+
+</div>
+
+</div>
+
+<hr>
+
+<h5 class="text-success mb-4">
+
+<i class="bi bi-telephone-fill"></i>
+
+Contact Details
+
+</h5>
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+
+<label>Mobile</label>
+
+<input
+type="text"
+name="mobile"
+maxlength="10"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>Alternate Mobile</label>
+
+<input
+type="text"
+name="alternate_mobile"
+maxlength="10"
+class="form-control">
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>Email</label>
+
+<input
+type="email"
+name="email"
+class="form-control">
+
+</div>
+
+</div>
+
+<hr>
+
+<h5 class="text-warning mb-4">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+Address
+
+</h5>
+
+<div class="mb-3">
+
+<label>Address</label>
+
+<textarea
+name="address"
+rows="3"
+class="form-control"></textarea>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<label>City</label>
+
+<input
+type="text"
+name="city"
+class="form-control">
+
+</div>
+
+<div class="col-md-4">
+
+<label>State</label>
+
+<input
+type="text"
+name="state"
+class="form-control">
+
+</div>
+
+<div class="col-md-4">
+
+<label>Pincode</label>
+
+<input
+type="text"
+name="pincode"
+maxlength="6"
+class="form-control">
+
+</div>
+
+</div>
+
+<hr>
+
+<h5 class="text-danger mb-4">
+
+<i class="bi bi-cloud-upload-fill"></i>
+
+Upload Files
+
+</h5>
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Customer Photo</label>
+
+<input
+type="file"
+name="photo"
+accept=".jpg,.jpeg,.png"
+class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Customer Document (PDF)</label>
+
+<input
+type="file"
+name="document"
+accept=".pdf"
+class="form-control">
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="mb-3">
+<h5 class="text-secondary mb-4">
+
+<i class="bi bi-chat-left-text-fill"></i>
+
+Remarks
+
+</h5>
+
+<label>Remarks</label>
+
+<textarea
+name="remarks"
+rows="4"
+class="form-control"></textarea>
+
+</div>
+
+<div class="text-center">
+
+<button
+class="btn btn-success btn-lg px-4"
+type="submit">
+
+<i class="bi bi-check-circle-fill"></i>
+
+Register Customer
+
+</button>
+
+<button
+type="reset"
+class="btn btn-outline-secondary btn-lg">
+
+<i class="bi bi-arrow-clockwise"></i>
+
+Reset
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

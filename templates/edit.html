@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Customer
+{% endblock %}
+
+{% block content %}
+
+<div class="card shadow">
+
+<div class="card-header bg-warning">
+
+<h3>
+
+<i class="bi bi-pencil-square"></i>
+
+Edit Customer
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<form action="/update/{{ customer[0] }}" method="POST">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Full Name</label>
+
+<input
+type="text"
+name="full_name"
+class="form-control"
+value="{{ customer[1] }}"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Father Name</label>
+
+<input
+type="text"
+name="father_name"
+class="form-control"
+value="{{ customer[2] }}">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Mother Name</label>
+
+<input
+type="text"
+name="mother_name"
+class="form-control"
+value="{{ customer[3] }}">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Date Of Birth</label>
+
+<input
+type="date"
+name="dob"
+class="form-control"
+value="{{ customer[4] }}">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Gender</label>
+
+<select
+name="gender"
+class="form-select">
+
+<option {% if customer[5]=="Male" %}selected{% endif %}>Male</option>
+
+<option {% if customer[5]=="Female" %}selected{% endif %}>Female</option>
+
+<option {% if customer[5]=="Other" %}selected{% endif %}>Other</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Occupation</label>
+
+<input
+type="text"
+name="occupation"
+class="form-control"
+value="{{ customer[6] }}">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Mobile</label>
+
+<input
+type="text"
+name="mobile"
+class="form-control"
+value="{{ customer[7] }}">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Alternate Mobile</label>
+
+<input
+type="text"
+name="alternate_mobile"
+class="form-control"
+value="{{ customer[8] }}">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Email</label>
+
+<input
+type="email"
+name="email"
+class="form-control"
+value="{{ customer[9] }}">
+
+</div>
+
+<div class="mb-3">
+
+<label>Address</label>
+
+<textarea
+name="address"
+class="form-control">{{ customer[10] }}</textarea>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>City</label>
+
+<input
+type="text"
+name="city"
+class="form-control"
+value="{{ customer[11] }}">
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>State</label>
+
+<input
+type="text"
+name="state"
+class="form-control"
+value="{{ customer[12] }}">
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>Pincode</label>
+
+<input
+type="text"
+name="pincode"
+class="form-control"
+value="{{ customer[13] }}">
+
+</div>
+
+<div class="mb-3">
+
+<label>Remarks</label>
+
+<textarea
+name="remarks"
+class="form-control">{{ customer[14] }}</textarea>
+
+</div>
+
+</div>
+<button class="btn btn-success btn-lg">
+
+<i class="bi bi-check-circle-fill"></i>
+
+Update Customer
+
+</button>
+
+<a href="/customers"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}
