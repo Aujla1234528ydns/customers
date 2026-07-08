@@ -33,7 +33,7 @@ app.secret_key = SECRET_KEY
 try:
     connection = get_connection()
     connection.close()
-    print("✅ Connected to MySQL Successfully!")
+    print("✅ Connected to SQLite Successfully!")
 
 except Exception as e:
     print("❌ Database Connection Failed")
@@ -152,7 +152,7 @@ def save_customer():
 
     VALUES
     (
-        %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s
+        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
     )
     """
 
@@ -208,8 +208,8 @@ def login():
         """
         SELECT *
         FROM admins
-        WHERE username=%s
-        AND password=%s
+        WHERE username=?
+        AND password=?
         """,
 
         (username,password)
@@ -250,7 +250,7 @@ def dashboard():
     cursor.execute("""
         SELECT COUNT(*)
         FROM customers
-        WHERE DATE(created_at) = CURDATE()
+        WHERE DATE(created_at) = DATE('now')
     """)
     today = cursor.fetchone()[0]
 
@@ -305,9 +305,9 @@ def customers():
 
         FROM customers
 
-        WHERE full_name LIKE %s
+        WHERE full_name LIKE ?
 
-        OR mobile LIKE %s
+        OR mobile LIKE ?
 
         """,
 
@@ -342,7 +342,7 @@ def edit(id):
     cursor = connection.cursor()
 
     cursor.execute(
-        "SELECT * FROM customers WHERE id=%s",
+        "SELECT * FROM customers WHERE id=?",
         (id,)
     )
 
@@ -367,21 +367,21 @@ def update(id):
     sql = """
     UPDATE customers
     SET
-    full_name=%s,
-    father_name=%s,
-    mother_name=%s,
-    dob=%s,
-    gender=%s,
-    occupation=%s,
-    mobile=%s,
-    alternate_mobile=%s,
-    email=%s,
-    address=%s,
-    city=%s,
-    state=%s,
-    pincode=%s,
-    remarks=%s
-    WHERE id=%s
+    full_name=?,
+    father_name=?,
+    mother_name=?,
+    dob=?,
+    gender=?,
+    occupation=?,
+    mobile=?,
+    alternate_mobile=?,
+    email=?,
+    address=?,
+    city=?,
+    state=?,
+    pincode=?,
+    remarks=?
+    WHERE id=?
     """
 
     values = (
@@ -420,7 +420,7 @@ def delete(id):
     cursor = connection.cursor()
 
     cursor.execute(
-        "DELETE FROM customers WHERE id=%s",
+        "DELETE FROM customers WHERE id=?",
         (id,)
     )
 
